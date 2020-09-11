@@ -1,0 +1,52 @@
+.row {
+    padding: 0px;
+}
+
+.center-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+ol#answers li {
+    padding: 5px;
+}
+
+li.question-item {
+    padding: 5px;
+}
+
+.answer-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.answer-description {
+    width: 60%;
+    margin-right: 10px;
+}
+
+.radio {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px !important;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+}
+
+.question-header {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.radio.answer-radio {
+    margin-top: -2px;
+}
+
+ol {
+    font-weight: bold;
+}

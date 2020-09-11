@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/bootstrap.min.css">
+    <script src="./libs/jquery.js"></script>
+    <script src="./libs/jquery.serializeToJSON.js"></script>
+    <script src="./libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="" method="post" name="quiz" id="quiz" style="padding-top: 50px;">
+            <div class="row quiz center-items" id="quiz">
+                <div class="col-md-10 form-group">
+                    <label for="description">Description</label>
+                    <div>
+                        <textarea required class="form-control" name="quiz.description" id="description"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-2 form-group">
+                    <button type="button" id="btnAddQuestion" class="btn btn-default">+ Add Question</button>
+                </div>
+            </div>
+            <div class="row" id="question-sections">
+                <ol class="question-list" id="question-list">
+
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" id="btnCreate" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+            <!--Question Template-->
+            <template id="qunestion-template">
+                <li class="question-item">
+                    <div class="question-header">
+                        <!--QuestionHeader-->
+                    </div>
+                    <div class="row center-items">
+                        <div class="col-md-6 form-group">
+                            <label for="title">Title</label>
+                            <div>
+                                <textarea required class="form-control question-title" id="title"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label for="points">Points</label>
+                            <div>
+                                <input required type="number" class="form-control question-points" id="points" step="1"
+                                    min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" onclick="return this.parentNode.parentNode.parentNode.remove();"
+                                class="btn btn-default btn-delete">Delete</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ol class="answers" id="answers">
+                            <li>
+                                <div class="answer-item">
+                                    <input class="form-control answer-description" required type="text">
+                                    <label class="radio-label" for="correctanser">
+                                        <input type="radio" required class="radio answer-radio">
+                                        Is Correct Answer
+                                    </label>
+                                    <div style="margin-left:10px; cursor:pointer;"
+                                        onclick="return this.parentNode.parentNode.remove();">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                        <div>
+                            <button type="button" class="btn btn-default " id="btnAddAnswer">+ Add Answer</button>
+                        </div>
+                    </div>
+            </template>
+            <!--Question Template-->
+            <!--Answer Template-->
+            <template id="answer-template">
+                <li>
+                    <div class="answer-item">
+                        <input class="form-control answer-description" required type="text">
+                        <label class="radio-label" for="correctanser">
+                            <input required type="radio" class="radio answer-radio">
+                            Is Correct Answer
+                        </label>
+                        <div style="margin-left:10px; cursor:pointer;"
+                            onclick="return this.parentNode.parentNode.remove();"'>
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </li>
+            </template>
+            <!--Answer Template-->
+        </form>
+        <script src="./app.js"></script>
+    </div>
+</body>
+
+</html>
